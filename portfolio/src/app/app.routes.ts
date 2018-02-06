@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AboutComponent, PortafolioComponent, ItemComponent
-} from "./components/index.paginas";
+import { AboutComponent, PortafolioComponent, ItemComponent } from './components/index.paginas';
 
 const app_routes: Routes = [
 {path: 'home', component: PortafolioComponent},

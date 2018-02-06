@@ -18,5 +18,9 @@ export class ProductosService {
         this.productos = data.json(); } );
     
   }
+  
+  public cargarInfoProducto(cod: string) {
+    return this.http.get(`https://dbportflio-b01eb.firebaseio.com/productos/${cod}.json`);
+  }
 
 }

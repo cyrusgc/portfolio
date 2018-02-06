@@ -1,4 +1,6 @@
 import { Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-item',
@@ -6,7 +8,17 @@ import { Component} from '@angular/core';
 })
 export class ItemComponent {
 
-  constructor() { }
+  item: any = undefined;
 
+  constructor(private route: ActivatedRoute,
+  private productService: ProductosService) {
+  route.params.subscribe (parametros => {
+    productService.cargarInfoProducto(parametros['id'])
+      .subscribe(res => {
+        this.item = res.json();
+      });
+  });
+
+  }
 
 }
