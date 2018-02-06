@@ -17,7 +17,7 @@ export class InformationService {
     }
   
   public chargingInfo(){
-      this.http.get("assets/data/info.page.json")
+      this.http.get('assets/data/info.page.json')
       .subscribe(data => { this.charge = true;
         this.info = data.json(); } );
     }
@@ -26,7 +26,7 @@ export class InformationService {
   
   
   public chargingAbout(){
-    this.http.get("https://dbportfolio-b01eb.firebaseio.com/equipo.json")
+    this.http.get('https://dbportfolio-b01eb.firebaseio.com/equipo.json')
       .subscribe(data => { this.chargeAbout = true;
         this.team = data.json(); } );
     }
