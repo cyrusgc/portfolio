@@ -16,16 +16,11 @@ export class ProductosService {
   public cargarProductos() {
 
     this.chargeProduct = true;
-
-    let promesa= new Promise(( resolve, reject => {
      this.http.get('https://dbportfolio-b01eb.firebaseio.com/productos_idx.json')
       .subscribe(data => { this.chargeProduct = false;
         this.productos = data.json();
-      resolve();
       } );
 
-    }));
-    return promesa;
   }
 
   public cargarInfoProducto(cod: string) {
@@ -34,13 +29,6 @@ export class ProductosService {
   }
 
   public searchProducts(word: string) {
-    
-    if (this.productos.length===0){
-      this.chargeProduct().then;
-    }
-    this.productos.forEach(prod=>{
-    console.log();
-    })
 
   }
 

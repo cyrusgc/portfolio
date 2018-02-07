@@ -13,7 +13,6 @@ export class SearchComponent {
   private productService: ProductosService) {
   route.params.subscribe (parametros => {
     this.word = parametros ['word'];
-    console.log();
     productService.searchProducts(this.word);
    });
 
